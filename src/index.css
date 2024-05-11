@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+
+}
+/* :root,.light{
+  --primary:#000;
+  --secondary: #18181b;
+  --bgHeader: rgb(39,39,42);
+  --border: rgba(63 ,63, 70, 0.4);
+  --title :rgb(244 244 245);
+  --subtitle:rgb(161 161 170);
+  --blue:rgb(93,188,252);
+  --icon-hover: #d4d4d8;
+  --container-padding: 4.8rem;
+  --gray-20:#f8f4eb;
+  --gray-50:#EFE6E6;
+  --gray-100:#DFCCCC;
+  --gray-500:#5E0000;
+  --primary-100:#ffe1e0;
+  --primary-300:#FFA6A3;
+  --primary-500:#FF6B66;
+  --secondary-400:#FFCD58;
+  --secondary-500:#FFC132;
+  --white: #ffffff;
+--baner: #FF2625
+} */
+:root{
+  --primary:#000;
+  --secondary: #18181b;
+  --bgHeader: rgb(39,39,42);
+  --border: rgba(63 ,63, 70, 0.4);
+  --title :rgb(244 244 245);
+  --subtitle:rgb(26, 26, 27);
+  --blue:rgb(93,188,252);
+  --icon-hover: #dc6a35;
+  --container-padding: 4.8rem;
+  --gray-20:#f8f4eb;
+  --gray-50:#EFE6E6;
+  --gray-100:#DFCCCC;
+  --gray-500:#5E0000;
+  --primary-100:#ffe1e0;
+  --primary-300:#FFA6A3;
+  --primary-500:#FF6B66;
+  --secondary-400:#FFCD58;
+  --secondary-500:#FFC132;
+  --white: #ffffff;
+--baner: #FF2625;
+--darkMenu:#FFA6A3;
+--favorit-300:#FF2625;
+--card: #ffffff;
+
+}
+
+[data-theme='dark'] {
+  --primary:#000;
+  --secondary: #ceced4;
+  --bgHeader: rgb(39,39,42);
+  --border: rgba(63 ,63, 70, 0.4);
+  --title :rgb(244 244 245);
+  --subtitle:#ad3030;
+  --blue:rgb(93,188,252);
+  --icon-hover: #dc6a35;
+  --container-padding: 4.8rem;
+  --gray-20:rgb(39,39,42);
+  --gray-50:#141414;
+  --gray-100:#252525;
+  --gray-500:#e4d2d2;
+  --primary-100: #ad3030;;
+  --primary-300:#FFCD58;
+  --primary-500:#ad3030;;
+  --secondary-400:#FFCD58;
+  --secondary-500:#FFC132;
+  --white:  #18181b;
+--baner: #e44747;
+--darkMenu:#252525;
+--favorit-300:#FFCD58;
+--card:   rgba(63 ,63, 70, 0.4);
+}
+
+
+
+body{
+  background-color: var(--gray-20);
+  color: var(--gray-20);
+}
+html,body,#root,.App{
+  height: 100%;
+  width: 100%;
+  font-family: "DM Sans", sans-serif;
+  color: var(--gray-500);
+}
+.App{
+  color: var(--gray-500);
+  background-color: var(--gray-20);
+}
+
+.love{
+  color:var(--baner);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem; 
+  border-radius: 0.375rem; 
+  background-color: var(--secondary-500); 
+  color: var(--gray-500); 
+  border: none; 
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; 
+
+  /* Hover styles */
+  &:hover {
+    background-color: var(--primary-500); 
+    color: var(--white);
+  }
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+button{
+  all: unset;
+}
+.flex{
+  display: flex;
+}
+.flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+ 
+}
+.border{
+  border: 1px solid red;
+}
+.link{
+ cursor: pointer;
+  color: var(--gray-500);
+  text-decoration: none;
+}
+link:hover{
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Card Excersice */
+.card{
+  flex-wrap: wrap;
+  justify-content: center;
+   flex-grow: 1; 
+   box-shadow: -1px 1px 1px rgba(0,0,0,0.16),1px 1px 1px rgba(0,0,0,0.15);
+  border: 1px solid var(--gray-500);
+  transition: 0.3s;
+  border-radius: 5px;
+  background-image: linear-gradient(rgba(255,255,255,0.05),rgba(255,255,255,0.05));
+justify-content: flex-end;
+}
+.card:hover{
+  border:none
+}
+.card:hover{
+  border: 1px solid var(--baner);
+  rotate: 1deg;
+  scale:1.01;
+  cursor: pointer;
+  background-color: rgba(246, 245, 245, 0.151);
+}
+
+.cardtitle{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem ;
+  text-transform: capitalize;
+  color: var(--primary-500); 
+  /* margin-bottom: 1rem; */
+  padding: 20px;
+ 
+}
+
+/*  Button */
+
+.btn{
+
+  margin-top: 1rem;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  background: var(--baner);
+  padding: 14px;
+  font-size: 22px;
+  text-transform: none;
+  /* color: var(--white); */
+  border-radius: 4px;
+  transition: 0.2s;
+ 
+}
+.btn:hover{
+  background-color: var(--primary-300);
+  color: var(--baner);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-start{
+  color: var(--primary-500);
+}
+
+

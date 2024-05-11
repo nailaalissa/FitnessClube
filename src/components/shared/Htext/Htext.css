@@ -1,0 +1,27 @@
+.h1-style{
+  /* width: 60%;  */
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-top: 1rem;
+}
+.h1-style:hover{
+  color: var(--primary-300);
+  transition: 0.2s;
+  text-decoration: 2px underline var(--baner);
+}
+
+@media (max-width:570px) {
+
+  .h1-style{
+    font-size: 1.5rem;
+  }
+}
+@media (min-width:970px) {
+
+  .h1-style{
+    font-size: 1.66rem;
+  }
+}

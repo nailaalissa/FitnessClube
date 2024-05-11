@@ -1,0 +1,276 @@
+
+  /* content */
+  /*
+  1- Hero banner style 
+  2- Motion 
+  3- Search Excersice 
+  4- Courses style 
+  5- media query */
+
+
+
+
+ /* 1- Hero banner style  */
+.banner{
+  /* position: relative; */
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  /* align-items: center; */
+  margin-top: 70px;
+
+}
+
+.banner-content {
+  width: 50%;
+  padding: 20px;
+
+}
+
+
+.banner-title {
+  color: var(--baner);
+  font-weight: 600;
+  font-size: 28px;
+  animation: move 0.7s;
+ 
+}
+.banner-heading {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 23px;
+  margin-top: 30px;
+}
+
+.banner-text {
+  font-size: 22px;
+  font-family: Alegreya;
+  line-height: 35px;
+}
+.banner-button {
+  margin-top: 45px;
+}
+.banner-image {
+  width: 40%;
+  background: transparent;
+}
+.hero-banner-img {
+  background: transparent;
+  width: 470px;
+}
+.click{
+   z-index: 99; 
+}
+.watermark-text {
+  position: relative;
+  top: 10%;
+  left: 50%;
+ z-index: -1;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: var(--baner) ;
+  opacity: 0.1;
+  font-size: 180px;
+}
+.banner-content .text-banner{
+  margin: 1.5rem;
+  /* padding: 15px; */
+  font-size: 1.3rem;
+}
+
+/* motion  */
+@keyframes move {
+  0% {scale: 0;}
+  60%{scale:1.2;}
+  100% {scale: 1;}
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animation{
+  opacity: 0; 
+  animation: slideInLeft 0.5s forwards;
+}
+
+
+ /* media query */
+
+@media (max-width: 890px ) {
+
+  .banner-content{
+    width: 95%;
+  
+  }
+  .banner-image{
+    width: 98%;
+ margin-left: auto;
+ margin-right: auto;
+  }
+  .text-banner{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+  .banner-heading{
+    font-size: 20px;
+  }
+  .hero-banner-img {
+    width: 300px;
+  object-fit: contain;
+    /* margin-left: 2rem; */
+  }
+  .hero-banner-img {
+    width: 380px;
+  }
+  .watermark-text {
+    font-size: 110px;
+    top: 10%;
+  }
+}
+
+/* @media (min-width: 890px ) {
+  
+  
+} */
+@media (max-width: 820px ) {
+  br{
+    display: none;
+  }
+
+  .hero-banner-img {
+    width: 280px;
+  }
+
+ 
+}
+
+@media (max-width:490px) {
+  .watermark-text {
+    font-size: 70px;
+    top:12%;
+  }
+  .banner{
+    font-size: 12px;
+  }
+  .hero-banner-img {
+    width: 200px;
+  }
+  .banner-text{
+    font-size: 18px;
+  }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Search Excersice */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 37px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 44px;
+  margin-bottom: 49px;
+  text-align: center;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 72px;
+  border: 1px;
+}
+
+.input-field {
+  height: 56px;
+  font-weight: 700;
+  border: 1px solid ;
+  color: var(--baner);
+  border-radius:   7px 0 0 7px ;
+  width: 760px;
+  background-color: var(--white);
+
+  /* border-radius: 40px; */
+  padding: 0 20px;
+}
+.input-field:hover , .input-field:focus{
+  color: var( --gray-500);
+  border-color: var( --gray-500);
+}
+.input-field:focus{
+  border: none;
+}
+.search-btn {
+  background-color: var(--baner);
+  color: var(--white);
+  text-transform: none;
+  width: 100px;
+  height: 59px;
+  /* position: absolute; */
+  right: 0;
+  font-size: 14px;
+  border: none;
+  border-radius:  0 7px 7px 0;
+  cursor: pointer;
+}
+.search-btn:hover {
+  color: var(--gray-500) !important;
+  background-color: var(--white);
+  border: 1px solid var(--baner) !important;
+ 
+}
+
+.scrollbar-container {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
+@media (max-width: 790px) {
+  .input-field {
+    width: 60%;
+    height: 50px;
+  }
+  .search-btn{
+    width: 25px;
+    height: 50px;
+  }
+  
+}
+@media (max-width: 990px) {
+  .input-field {
+    width: 60%;
+    height: 50px;
+  }
+  .search-btn{
+    width: 20%;
+    height: 51px;
+  }
+}
+
+@media (max-width:660px) {
+  .banner-image{
+    display: none;
+  }
+}
+

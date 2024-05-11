@@ -1,0 +1,8 @@
+.base-label {
+	display: flex;
+  justify-content: space-around;
+  align-items: center;
+font-size: 1rem;
+font-weight: 500;
+text-transform: capitalize;
+}

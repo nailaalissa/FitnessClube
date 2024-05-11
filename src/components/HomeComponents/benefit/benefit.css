@@ -1,0 +1,136 @@
+/* Benifit */
+.benifit-text{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  margin-left: 1rem ;
+}
+.benifit-section{
+
+  min-height: 100vh;
+  width: 83.3%; 
+  margin-left: auto; 
+  margin-right: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+  .container {
+    margin-top: 1.25rem; 
+    margin-bottom: 1.2rem;
+    display: flex;
+    /* align-items: center;  */
+    justify-content: space-between; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .benefit-card{
+    background-color: var(--white);
+    width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: space-between; 
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.16),1px 1px 1px rgba(0,0,0,0.15);
+  border: 1px solid   var(--gray-500);
+  transition: 0.3s;
+  border-radius: 5px;
+  background-image: linear-gradient(rgba(255,255,255,0.05),rgba(255,255,255,0.05));
+  }
+  .benefit-card:hover{
+    border: 1px solid var( --primary-500);
+    rotate: 1deg;
+    scale:1.01;
+    cursor: pointer;
+    background-color: rgba(246, 245, 245, 0.016);
+}
+  .benefit-icon, .benefit-img{
+    text-align: center;
+   margin: 1rem;
+   border-radius: 50%;
+  border: 2px solid var(--secondary-400);
+  box-shadow: inset var(--primary-300);
+    
+  }
+  .benefit-icon:hover,.benefit-img:hover{
+    cursor: pointer;
+    background-color: var(--gray-500);
+    color: var(--primary-100);
+    transition: 0.2s;
+    }
+
+
+  .benefit-icon{width: 40px;
+    padding: 10px;}
+  .benefit-img{
+    width: 90px;
+    padding: 5px;
+  }
+  .linkSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .benefit-title{
+    padding: 5px;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--subtitle);
+  }
+  .benefit-description{
+    padding: 8px;
+    font-size: 14px;
+    color: var( --secondary);
+    text-align: center;
+  }
+
+ .text-primary-500{
+ 
+  color: var(--primary-500);
+ }
+  .section-2{
+    margin-top: 2rem;
+  }
+  
+  .descript-container {
+    margin-bottom: 2rem; 
+  }
+  .descript-text {
+    margin-bottom: 1rem; /
+  }
+  
+  .button-container {
+    position: relative;
+    margin-top: 2rem; 
+  }
+  
+  @media (max-width: 768px) {
+
+    .container {
+      display: flex; 
+    }
+    /* .benefit-card{
+      width: 90%;
+    } */
+  }
+
+  @media (max-width:880px) {
+    .benefit-card{
+      width: 45%;
+    }
+    .container{
+      justify-content: center;
+    }
+  }
+  @media (max-width:660px) {
+    .benefit-card{
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
