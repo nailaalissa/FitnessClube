@@ -13,6 +13,7 @@ import ExerciseList from './pages/ExersiceList';
 import CalculateBMI from './components/Calculate/BMI/CalculateBMI';
 import Bmr from './components/Calculate/BMR/BmrCalculate';
 import CalorieCalculate from './components/Calculate/Calorie/CalorieCalculate';
+import Error from './pages/Error'
 // import { FavoriteExerciseProvider } from './components/hooks/FavoriteExerciseContext';
 import FavoriteExercisesPage from './pages/FavoriteExercisesPage';
 function App() { 
@@ -35,7 +36,7 @@ function App() {
       <Route path="/service/bmrCalculate" element={<Bmr />} />
       <Route path="service/CalorieCalculate" element={<CalorieCalculate />} />
       <Route path="/favorites" element={<FavoriteExercisesPage />} />
-
+      <Route path="*" element={<Error />} />
       </Routes> 
       
     <Footer />
