@@ -3,6 +3,7 @@ import './homeComponent.css'
 import Button from '../shared/Button';
 import { Link } from 'react-router-dom';
 const HeroBanner = () => (
+ 
   <section className='banner'>
     <div className='banner-content animation'>
       <h2 className='banner-title'>Fitness Club</h2>

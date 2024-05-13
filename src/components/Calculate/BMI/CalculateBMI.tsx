@@ -1,7 +1,7 @@
 import '../calculate.css'
 import Form from '../../shared/form'
 import { BmiProps,BmiResult } from './calculate.types'
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useCallback } from 'react';
 import loadingImage from '../../../assets/calculate.gif';
  import height from '../../../assets/height.png'
 import weight from '../../../assets/kg.png'
@@ -10,6 +10,7 @@ import sparkel from '../../../assets/AbstractWaves.png'
 // import classification from '../../../assets/class1.png'
 import Htext from '../../shared/Htext';
 
+
 export default function CalculateBMI() {
   const [bmiValues, setBmiValues] = useState<BmiProps | null>(null);
   const [disableButton, setDisableButton] = useState<boolean>(false);
@@ -17,7 +18,7 @@ export default function CalculateBMI() {
   const [isLoading, setIsLoading] = useState<boolean>(false); 
   const [showMessage, setShowMessage] = useState<boolean>(false);
 
-  
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setDisableButton(true);
@@ -36,38 +37,77 @@ export default function CalculateBMI() {
   }
 
 
-    useEffect(() => {
-      // Make API call when bmiValues change
-      if (bmiValues) {
-        setIsLoading(true); 
-        const url = `https://fitness-calculator.p.rapidapi.com/bmi?age=${bmiValues.age}&weight=${bmiValues.weight}&height=${bmiValues.height}`;
-        fetch(url, {
-          method: 'GET',
-          headers: {
-            'X-RapidAPI-Key': import.meta.env.VITE_APP_RAPID_API_KEY, 
-            'X-RapidAPI-Host': import.meta.env.VITE_APP_RAPID_HOST_FITNESS, 
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            setData(data.data); 
-            setIsLoading(false);
-            setShowMessage(true);
-           
-            setTimeout(() => {
-              setShowMessage(false);
-            
-              setBmiValues(null); 
-              setDisableButton(false); 
-            }, 9000); 
-          })
-          .catch((error) => {
-            console.error('Error fetching BMI data:', error);
-            setIsLoading(false); 
-          });
-      }
-    }, [bmiValues]);
+    // useEffect(() => {
   
+    //   if (bmiValues) {
+    //     setIsLoading(true); 
+    //     const url = `https://fitness-calculator.p.rapidapi.com/bmi?age=${bmiValues.age}&weight=${bmiValues.weight}&height=${bmiValues.height}`;
+    //     fetch(url, {
+    //       method: 'GET',
+    //       headers: {
+    //         'X-RapidAPI-Key': import.meta.env.VITE_APP_RAPID_API_KEY, 
+    //         'X-RapidAPI-Host': import.meta.env.VITE_APP_RAPID_HOST_FITNESS, 
+    //       },
+    //     })
+    //       .then((response) => response.json())
+    //       .then((data) => {
+    //         setData(data.data); 
+    //         setIsLoading(false);
+    //         setShowMessage(true);
+    //         console.log('test2');
+    //         setTimeout(() => {
+    //           setShowMessage(false);
+            
+    //           setBmiValues(null); 
+    //           setDisableButton(false); 
+    //         }, 9000); 
+    //       })
+    //       .catch((error) => {
+    //         console.error('Error fetching BMI data:', error);
+    //         setIsLoading(false); 
+    //       });
+    //   }
+    // }, [bmiValues]);
+  
+ 
+
+ // Consider using useCallback if the fetch logic depends on external factors
+ // Consider using useCallback only if fetchBMI depends on external factors
+ const memoizedFetchBMI = useCallback(async () => {
+  if (bmiValues) {
+    const url = `https://fitness-calculator.p.rapidapi.com/bmi?age=${bmiValues.age}&weight=${bmiValues.weight}&height=${bmiValues.height}`;
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': import.meta.env.VITE_APP_RAPID_API_KEY,
+          'X-RapidAPI-Host': import.meta.env.VITE_APP_RAPID_HOST_FITNESS,
+        },
+      });
+      const data = await response.json();
+      setData(data.data);
+    } catch (error) {
+      console.error('Error fetching BMI data:', error);
+    } finally {
+      setIsLoading(false);
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+        setBmiValues(null);
+        setDisableButton(false);
+      }, 9000);
+    }
+    console.log('test2')
+  }
+}, [bmiValues]); 
+
+useEffect(() => {
+  if (bmiValues) { 
+    memoizedFetchBMI();
+  }
+}, [bmiValues,memoizedFetchBMI]); 
+ 
+
  
   return (
     <div style={{ marginTop: '5rem',minHeight:'90vh' }}>
@@ -75,7 +115,7 @@ export default function CalculateBMI() {
      
         <div className="calculate-side">
           
-          <Form onSubmit={handleSubmit} title='BMI Calculate' input1='height' input2='weight' input3='age' text='Calculate' gender='female' disableButton={disableButton} />
+          <Form  onSubmit={handleSubmit} title='BMI Calculate' input1='height' input2='weight' input3='age' text='Calculate' gender='female' disableButton={disableButton} />
     
         
         </div>

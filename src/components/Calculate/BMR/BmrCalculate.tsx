@@ -32,6 +32,7 @@ export default function BmrCalculate() {
     });
 
     setIsLoading(true);
+    console.log('test1')
   }
   useEffect(() => {
     if (bmrValues) {
@@ -65,6 +66,7 @@ export default function BmrCalculate() {
           console.error('Error fetching data:', error);
           setIsLoading(false);
         });
+        console.log('test2')
     }
   }, [bmrValues]);
 

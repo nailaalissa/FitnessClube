@@ -6,15 +6,13 @@ import Htext from '../../shared/Htext';
 import BodyPartImage from '../../../assets/body.png';
 import TargetImage from '../../../assets/waist.png';
 import EquipmentImage from '../../../assets/abs.png';
-// import Video from '../VideosDetails/Video';
-// import { useEffect, useState } from "react";
-// import { VideoData} from '../VideosDetails/Video.types';
+import VideoResult from '../VideosDetails/VideoResult';
+
+
 
 export default function Exercise() {
-  // const [exerciseName, setExerciseName] = useState('');
-  // const [videos, setVideos] = useState<VideoData[] | null>(null);
+
   const { id } = useParams();
-  // const exerciseDbUrl = 'https://exercisedb.p.rapidapi.com/exercises/exercise/';
   const url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`;
   const { data, isLoading, isError, error } = useFetch<ExerciseDetail>(
     url, import.meta.env.VITE_APP_RAPID_API_KEY, import.meta.env.VITE_APP_RAPID_HOST_EXERCISES
@@ -34,34 +32,7 @@ export default function Exercise() {
       name: data?.equipment,
     },
   ];
-// console.log(data?.bodyPart,data?.target,data?.equipment)
-  // const fetchVideo = async (exerciseName: string) => {
-  //   try {
-  //     const response = await fetch(`https://youtube-search-and-download.p.rapidapi.com/search?query=${exerciseName} exercise`, {
-  //       method: 'GET',
-  //       headers: {
-  //         'X-RapidAPI-Key': import.meta.env.VITE_APP_RAPID_API_KEY,
-  //         'X-RapidAPI-Host': import.meta.env.VITE_APP_RAPID_HOST_VIDEOS
-  //       },
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error('Network response was not ok');
-  //     }
-  //     const responseData = await response.json();
-  //   // console.log(responseData.contents); 
-  //     setVideos(responseData.contents)
-  //   } catch (error) {
-  //     console.error('Error fetching video data:', error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   if (data && data.name) {
-  //     setExerciseName(data.name)
-  //     fetchVideo(data.name); 
-  //     // console.log(videos)
-  //   }
-    
-  // }, [data]);
+
   return (
     <div style={{  marginTop: '6rem' }}>
   
@@ -122,31 +93,10 @@ export default function Exercise() {
       </p>
                 </div>
       )}
-      
-{/*       
-      {videos && videos.map((item: VideoData) => (
-       <div>
-       <h2>Exercise ID: {exerciseName}</h2>
-       <h3>{item.title}</h3>
-       <p>Channel: {item.channelName}</p>
-      <p>Description: {item.description}</p>
-       <p>Published Time: {item.publishedTimeText}</p>
-   
-       <a href={`https://www.youtube.com/watch?v=${item.videoId}&ab_channel=${item.channelId}`} target="_blank" rel="noopener noreferrer">Watch Video</a>
-    
-        <Video
-          key={item.channelId}
-          exerciseName={exerciseName}
-          title={item.title} 
-          channelName={item.channelName}
-          // description={item.description}
-          // publishedTimeText={item.publishedTimeText}
-          videoId={item.videoId}
-          channelId={item.channelId}
-          />
-           </div>
-))} */}
- 
+
+      {data &&  <VideoResult exerciseName={data.name} />}
+     
+     
     </div>
   );
 }

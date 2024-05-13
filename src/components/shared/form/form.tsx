@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useRef,useEffect } from 'react';
 import Button from '../Button';
 import Input from '../input/input';
 import Label from '../label/label';
@@ -9,7 +9,7 @@ import './form.css';
 function Form({
   className, disableButton, title, text, input1,input2,input3,activity,gender,children,...rest}: FormProps) {
   const [selectedGender, setSelectedGender] = useState<string | null>('female');
-  const [selectedActivityLevel, setSelectedActivityLevel] = useState<string>('level_1'); // Added state for activity level
+  const [selectedActivityLevel, setSelectedActivityLevel] = useState<string>('level_1'); 
 
   const handleGenderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedGender(event.target.value);
@@ -18,8 +18,16 @@ function Form({
     setSelectedActivityLevel(event.target.value);
    
   };
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (formRef.current && disableButton) {
+      formRef.current.reset();
+    }
+  }, [disableButton]);
+
   return (
-    <form {...rest} className={`base-form ${className}`}>
+    <form ref={formRef} {...rest} className={`base-form ${className}`} >
       <Htext>{title}</Htext>
 
       {gender && (
@@ -50,12 +58,13 @@ function Form({
       )}
       <div className='inputSection'>
       <Label text={input1} >
-        <Input name={input1} type="text" placeholder={`Add ${input1}`} required/>
+        <Input name={input1} type="text" placeholder={`Add ${input1}`} required   
+           />
         </Label>
         </div>
       <div className='inputSection'>
       <Label text={input2}>
-        <Input name={input2} type="text" placeholder={`Add ${input2}`} required/>
+        <Input name={input2}  type="text" placeholder={`Add ${input2}`} required   />
       </Label>
 </div>
     
@@ -64,7 +73,7 @@ function Form({
         <div className='inputSection'>
           
             <Label text={input3}>
-             <Input name={input3} type="text" placeholder={`Add ${input3}`} required/>
+            <Input name={input3} type="text" placeholder={`Add ${input3}`} required   />
           </Label>
           </div>
      
@@ -84,7 +93,7 @@ function Form({
 
       {children}
 
-      <Button type="submit" disabled={disableButton} className={disableButton ? 'notActive':'active'}>
+      <Button type="submit" disabled={disableButton} className={disableButton ? 'notActive':'active'}  >
        {disableButton ? 'waiting...' : `${text}`} 
       </Button>
     </form>

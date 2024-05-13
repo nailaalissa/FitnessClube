@@ -5,6 +5,8 @@ export interface Exercise {
   bodyPart: string;
   target: string;
   instructions?: string[];
+  isFavorite?: boolean;
+  equipment?: string;
 }
 export interface ExerciseDetail {
   id?: string

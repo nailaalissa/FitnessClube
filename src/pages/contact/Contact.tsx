@@ -4,20 +4,22 @@ import './contact.css'
 import imgArrow from '../../assets/Arrow.png'
 import shapImage from '../../assets/BenefitsPageGraphic.png'
 import animation from '../../assets/Animation - 1713948483984.gif'
-import { useState } from "react";
+import { useState,useRef } from "react";
 
 export default function ContactUs() {
   const [send, sentSend] = useState<boolean>(false); 
-  const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+ 
+  const formRef = useRef<HTMLFormElement>(null);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     sentSend(true);
     setTimeout(() => {
       sentSend(false);
     }, 6000);
-    setEmail("");
-    setMessage("");
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+
   }
   return (
     <div className="contact">
@@ -29,7 +31,7 @@ export default function ContactUs() {
       <h1 className="title">
          
             <img src={animation} alt=' '  className="shap-animation"/>
-        Contact us
+            Contact us
           </h1>
        
    
@@ -41,21 +43,15 @@ export default function ContactUs() {
           </p>
           <div style={{ justifyContent: 'space-between' }} className="flex" >
        
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit} ref={formRef}>
           <div>
             <label htmlFor="email">Email Address:</label>
-            <input autoComplete="off" type="email" name="email" id="email" required   value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}/>
+                  <input autoComplete="off" type="email" name="email" id="email" required />
            
           </div>
           <div className="" style={{ marginTop: '24px' }}>
             <label htmlFor="message">Your message:</label>
-            <textarea name="message" id="message" required    value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}/>
+            <textarea name="message" id="message" required  />
            
           </div>
          

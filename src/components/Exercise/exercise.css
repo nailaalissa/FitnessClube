@@ -3,6 +3,7 @@
 2- Exercise Detail page  
 4- Video Page (not complete)?
 3- Media query
+4- Search Excersice 
 */
 
 
@@ -286,3 +287,124 @@ width: 100%;
   .instructions {
     margin: 0.5rem;}
 }
+
+
+
+
+
+/* Search Excersice */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 37px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 44px;
+  margin-bottom: 49px;
+  text-align: center;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 72px;
+  border: 1px;
+}
+
+.input-field {
+  height: 58px;
+  font-weight: 700;
+  border: 1px solid ;
+  color: var(--baner);
+  border-radius:   7px 0 0 7px ;
+  width: 760px;
+  background-color: var(--white);
+
+  /* border-radius: 40px; */
+  padding: 0 20px;
+}
+.input-field:hover , .input-field:focus{
+  color: var( --gray-500);
+  border-color: var( --gray-500);
+}
+.input-field:focus{
+  border: none;
+}
+.search-btn {
+  background-color: var(--baner);
+  color: var(--white);
+  text-transform: none;
+  width: 100px;
+  height: 56px;
+  /* position: absolute; */
+  right: 0;
+  font-size: 14px;
+  border: none;
+  border-radius:  0 7px 7px 0;
+  cursor: pointer;
+  text-align: center;
+}
+.search-btn:hover {
+  color: var(--gray-500) !important;
+  background-color: var(--white);
+  border: 1px solid var(--baner) !important;
+ 
+}
+
+.scrollbar-container {
+  position: relative;
+  width: 100%;
+ justify-content: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:1rem;
+}
+
+@media (max-width: 790px) {
+  .input-field {
+    width: 60%;
+    height: 50px;
+  }
+  .search-btn{
+    width: 25px;
+    height: 50px;
+  }
+  
+}
+@media (max-width: 990px) {
+  .input-field {
+    width: 60%;
+    height: 50px;
+  }
+  .search-btn{
+    width: 20%;
+    height: 51px;
+  }
+}
+
+@media (max-width:660px) {
+  .banner-image{
+    display: none;
+  }
+ .videoTitle{
+  font-size: 16px;
+
+ }
+  
+}
+
+.video{
+  border-bottom: 1px solid red;
+}
+.video:last-child{
+  border: none;
+} 
+.videoTitle{
+  margin-bottom: 1rem;
+ }

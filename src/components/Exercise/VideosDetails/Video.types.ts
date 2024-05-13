@@ -1,11 +1,11 @@
-export interface VideoThumbnail {
-  height?: number;
-  url: string;
-  width?: number;
+
+
+export interface VideoResponse {
+  contents: VideoData[];
+estimatedResults: string;
+next: string;
+ 
 }
-
-
-
 export interface VideoData {
   exerciseName: string;
   channelId?: string;
@@ -19,8 +19,13 @@ export interface VideoData {
   viewCountText?: string;
 }
 
-export interface VideoResponse {
-  contents?: VideoData[];
-  estimatedResults?: string;
-  next?: string;
+export interface VideoThumbnail {
+  height?: number;
+  url: string;
+  width?: number;
+}
+
+export interface VideoItem {
+  video?: VideoData;
+  // channel?: ChannelData;
 }
