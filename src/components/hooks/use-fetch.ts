@@ -46,7 +46,7 @@ function useFetch<ResponseType>(url: string,key:string,host:string) {
 			return () => controller.abort();
 		})();
 	}, [url,key,host]);
-  console.log(isError, error);
+  //console.log(isError, error);
 	return { data, isLoading, isError, error };
 }
 

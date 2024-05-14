@@ -4,6 +4,7 @@
 4- Video Page (not complete)?
 3- Media query
 4- Search Excersice 
+5-  pagination Part in ExcersiseList page  
 */
 
 
@@ -407,3 +408,44 @@ width: 100%;
 .videoTitle{
   margin-bottom: 1rem;
  }
+
+ /* pagination Part in ExcersiseList page  */
+.pagination{
+width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+ 
+}
+.pagination-btn{
+  font-weight: 600;
+  text-decoration: underline;
+}
+.pagination-btn:hover{
+  font-size: 1.1rem;
+
+}
+.pageNumber-btn{
+  color: red;
+  padding: 8px;
+}
+
+.pagination .active{
+  padding: 5px;
+  background: #f5b010;
+  border-radius: 25%;
+  color: red;
+  font-size: 1.3rem;
+  
+}
+.pagination .pageNmuber{
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.pagination .pageNmuber:hover{
+  font-size: 1.3rem;
+
+}
