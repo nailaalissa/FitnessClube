@@ -23,12 +23,20 @@ function useFetch<ResponseType>(url: string,key:string,host:string) {
            'X-RapidAPI-Host': host
          }});
 
+         if (response.ok) {
+           const data = await response.json();
+           setData(data);
+        } else {
+           const errorMessage = await response.text();
+           setIsError(true);
+        
+           return Promise.reject(new Error(errorMessage))
+          
+        }
 				
-				const data = await response.json();
-
-				setData(data);
 			} catch (error) {
-				setIsError(true);
+        setIsError(true);
+      
 				setError(error as Error);
 			} finally {
 				setIsLoading(false);
@@ -38,7 +46,7 @@ function useFetch<ResponseType>(url: string,key:string,host:string) {
 			return () => controller.abort();
 		})();
 	}, [url,key,host]);
-
+  console.log(isError, error);
 	return { data, isLoading, isError, error };
 }
 

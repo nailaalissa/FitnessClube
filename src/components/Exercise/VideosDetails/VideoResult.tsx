@@ -6,8 +6,8 @@ export default function VideoResult({ exerciseName }: { exerciseName: string }) 
   const [videos, setVideos] = useState<VideoData[] | null>(null);
   const { data } = useFetch<{ contents?: VideoItem[] }>( 
     `https://youtube-search-and-download.p.rapidapi.com/search?query=${exerciseName}exercise`,
-    import.meta.env.VITE_APP_RAPID_API_KEY,
-    import.meta.env.VITE_APP_RAPID_HOST_VIDEOS
+    '3dad8895d7mshdc18f9f812fc78bp1856b0jsna7e1282f969d',
+    'youtube-search-and-download.p.rapidapi.com'
   );
 
   useEffect(() => {

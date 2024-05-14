@@ -15,7 +15,7 @@ export default function Exercise() {
   const { id } = useParams();
   const url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`;
   const { data, isLoading, isError, error } = useFetch<ExerciseDetail>(
-    url, import.meta.env.VITE_APP_RAPID_API_KEY, import.meta.env.VITE_APP_RAPID_HOST_EXERCISES
+    url, '8a693a8e53mshe7579073abe3371p10e94bjsnc1d0e7a6b7fe', 'exercisedb.p.rapidapi.com'
   );
  
   const extraDetail = [
@@ -34,11 +34,11 @@ export default function Exercise() {
   ];
 
   return (
-    <div style={{  marginTop: '6rem' }}>
+    <div style={{  marginTop: '6rem', minHeight:'90vh' }}>
   
 
-      {isLoading && <p>Loading...</p>}
-			{isError && <p>{error?.message}</p>}
+     {isLoading && <p>Loading...</p>}
+			{isError && !data && <p style={{ textAlign: 'center', margin: '3rem', fontSize: '1.3rem', color: 'red' }}> error... No data available ...{error?.message}</p>}
      
  
       {data && (

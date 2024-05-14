@@ -42,8 +42,8 @@ export default function BmrCalculate() {
       fetch(url, {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': import.meta.env.VITE_APP_RAPID_API_KEY,
-          'X-RapidAPI-Host': import.meta.env.VITE_APP_RAPID_HOST_FITNESS,
+          'X-RapidAPI-Key': '3dad8895d7mshdc18f9f812fc78bp1856b0jsna7e1282f969d',
+          'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com',
         },
       })
         .then((response) => {
