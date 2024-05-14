@@ -5,7 +5,7 @@ function useFetch<ResponseType>(url: string,key:string,host:string) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
 	const [error, setError] = useState<Error | null>(null);
-  console.log('data');
+
 	useEffect(() => {
 		(async () => {
 		

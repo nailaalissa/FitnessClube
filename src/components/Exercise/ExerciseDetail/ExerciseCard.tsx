@@ -5,24 +5,25 @@ import { Exercise } from './exerciseTypes.types';
 import { Link } from 'react-router-dom';
 import '../exercise.css';
 import Htext from '../../shared/Htext';
-import { useFavoriteExercise } from '../../hooks/FavoriteExerciseContext';
+import { useFavoriteExercise } from '../../hooks/useFavoriteExercise';
 
 export default function ExerciseCard({ name, gifUrl, bodyPart, target, id }: Exercise) {
   const { addToFavorites, favoriteExercises, removeFromFavorites } = useFavoriteExercise();
   const isFavorite = favoriteExercises.some((exercise) => exercise.id === id);
 
+  // prevent unnecessary re-creations of function on every render
   const handleAddToFavorites = useCallback(() => {
     if (isFavorite) {
       if (id) {
         removeFromFavorites(id);
-        //console.log('test1');
+       
       }
     } else {
       addToFavorites({ id, name, gifUrl, bodyPart, target });
-      //console.log('test2');
+     
     }
   }, [isFavorite, id, name, gifUrl, bodyPart, target, addToFavorites, removeFromFavorites]);
-//console.log('card')
+
   return (
     <div className="exercise-link">
       <div>

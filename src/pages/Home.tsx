@@ -4,9 +4,12 @@ import Benefit from "../components/HomeComponents/benefit/Benefit"
 import HeroBanner from "../components/HomeComponents/HeroBanner"
 import {  useMemo } from 'react';
 import Htext from "../components/shared/Htext";
+
+
 export default function Home() {
 
-  const Search_Component = useMemo(() =>  <SearchExercise />, []);
+  const Search_Component = useMemo(() => <SearchExercise />, []);
+
   return (
     <div>
     

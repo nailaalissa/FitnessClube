@@ -316,14 +316,13 @@ width: 100%;
 }
 
 .input-field {
-  height: 58px;
+  height: 57px;
   font-weight: 700;
   border: 1px solid ;
   color: var(--baner);
   border-radius:   7px 0 0 7px ;
   width: 760px;
   background-color: var(--white);
-
   /* border-radius: 40px; */
   padding: 0 20px;
 }

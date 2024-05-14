@@ -5,7 +5,7 @@ import  { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './NavBar.css'; 
 import { useTheme } from '../../hooks/useTheme';
-import { useFavoriteExercise } from '../../hooks/FavoriteExerciseContext';
+import { useFavoriteExercise } from '../../hooks/useFavoriteExercise';
 
 export default function NavBar({ imageSrcPath, navItems }: NavBarProps) {
   const [showModel, setShowModel] = useState<boolean>(false);

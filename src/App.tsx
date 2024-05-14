@@ -17,7 +17,8 @@ import Error from './pages/Error'
 // import { FavoriteExerciseProvider } from './components/hooks/FavoriteExerciseContext';
 import FavoriteExercisesPage from './pages/FavoriteExercisesPage';
 function App() { 
-  const items = ["Home","Exercises", "Service","Contact","Favorites"];
+  const items = ["Home", "Exercises", "Service", "Contact", "Favorites"];
+
   return (
     <>
   
@@ -26,9 +27,9 @@ function App() {
         navItems={items} />
    
       <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} errorElement={<Error /> } />
       <Route path="/Home" element={<Home />} />
-      <Route path="/Exercises" element={<ExerciseList />} />
+      <Route path="/Exercises" element={<ExerciseList />} errorElement={<Error /> }/>
       <Route path="/Service" element={<Service />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/Exercise/:id" element={<Exercise  />} />
