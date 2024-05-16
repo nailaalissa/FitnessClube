@@ -1,5 +1,5 @@
 
-import React, { createContext, useState } from 'react';
+import  { createContext, useState } from 'react';
 import { Exercise } from '../../Exercise/ExerciseDetail/exerciseTypes.types';
 import {FavoriteExerciseContextType ,FavoriteExerciseProviderProps} from './FavoriteExercise.types'
 
