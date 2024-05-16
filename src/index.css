@@ -8,28 +8,7 @@
   box-sizing: border-box;
 
 }
-/* :root,.light{
-  --primary:#000;
-  --secondary: #18181b;
-  --bgHeader: rgb(39,39,42);
-  --border: rgba(63 ,63, 70, 0.4);
-  --title :rgb(244 244 245);
-  --subtitle:rgb(161 161 170);
-  --blue:rgb(93,188,252);
-  --icon-hover: #d4d4d8;
-  --container-padding: 4.8rem;
-  --gray-20:#f8f4eb;
-  --gray-50:#EFE6E6;
-  --gray-100:#DFCCCC;
-  --gray-500:#5E0000;
-  --primary-100:#ffe1e0;
-  --primary-300:#FFA6A3;
-  --primary-500:#FF6B66;
-  --secondary-400:#FFCD58;
-  --secondary-500:#FFC132;
-  --white: #ffffff;
---baner: #FF2625
-} */
+
 :root{
   --primary:#000;
   --secondary: #18181b;

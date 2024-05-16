@@ -80,14 +80,15 @@ import useFetch from '../../hooks/use-fetch';
 import ExerciseCard from "../ExerciseDetail";
 
 
+
 export default function SearchExercise() {
   const [search, setSearch] = useState<string>('');
   const [notFound, setNotFound] = useState<boolean>(false);
   const [searchExercise, setSearchExercise] = useState<boolean>(false);
   const { data } = useFetch<Exercise[]>(
     `https://exercisedb.p.rapidapi.com/exercises?limit=30`,
-    import.meta.env.VITE_APP_RAPID_API_KEY,
-    import.meta.env.VITE_APP_RAPID_HOST_EXERCISES
+    '8a693a8e53mshe7579073abe3371p10e94bjsnc1d0e7a6b7fe',
+    'exercisedb.p.rapidapi.com'
   );
 
   const filteredExercises = useMemo(() => {
@@ -141,7 +142,7 @@ export default function SearchExercise() {
                 <ExerciseCard key={exercise.id} name={exercise.name} gifUrl={exercise.gifUrl} bodyPart={exercise.bodyPart} target={exercise.target} id={exercise.id} />
                  ))
             ) : (
-              notFound && <p>No exercises found.</p>
+              notFound && <p style={{color:'red',fontWeight:'600',fontSize:'18px'}}>No exercises found.</p>
             )
               )}
               

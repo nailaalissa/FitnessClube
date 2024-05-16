@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom';
-import { FavoriteExerciseProvider } from './components/hooks/FavoriteExerciseContext.tsx'; 
+import { FavoriteExerciseProvider } from './components/hooks/FavoriteExercise/FavoriteExerciseContext.tsx'; 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

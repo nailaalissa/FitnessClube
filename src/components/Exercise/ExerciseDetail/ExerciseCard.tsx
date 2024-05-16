@@ -5,7 +5,7 @@ import { Exercise } from './exerciseTypes.types';
 import { Link } from 'react-router-dom';
 import '../exercise.css';
 import Htext from '../../shared/Htext';
-import { useFavoriteExercise } from '../../hooks/useFavoriteExercise';
+import { useFavoriteExercise } from '../../hooks/FavoriteExercise/useFavoriteExercise';
 
 export default function ExerciseCard({ name, gifUrl, bodyPart, target, id }: Exercise) {
   const { addToFavorites, favoriteExercises, removeFromFavorites } = useFavoriteExercise();

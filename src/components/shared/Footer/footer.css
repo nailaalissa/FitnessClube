@@ -37,7 +37,7 @@ footer ul li:hover{
 }
 footer p{
  text-align: center;
-  color: rgb(113,113,112);
+  color: var( --bgHeader);
 }
 
 

@@ -2,6 +2,7 @@ import  image  from '../../assets/HomePageGraphic.png'
 import './homeComponent.css'
 import Button from '../shared/Button';
 import { Link } from 'react-router-dom';
+
 const HeroBanner = () => (
  
   <section className='banner'>
@@ -20,11 +21,12 @@ const HeroBanner = () => (
         Check out the most effective exercises personalized to you
       </p>
         
-      <Link to='/Exercises' className="link click">
-          <Button type="submit" className='btn click'>
-            Explore Exercises
+      
+          <Button type="submit" className='btn click linkbutton' >
+          <Link to='/Exercises' className="link click">
+            Explore Exercises </Link>
           </Button>
-        </Link>
+       
   
       </div>
       

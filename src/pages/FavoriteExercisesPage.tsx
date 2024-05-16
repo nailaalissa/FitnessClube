@@ -1,5 +1,5 @@
 
-import { useFavoriteExercise } from '../components/hooks/useFavoriteExercise';
+import { useFavoriteExercise } from '../components/hooks/FavoriteExercise/useFavoriteExercise';
 import ExerciseCard from "../components/Exercise/ExerciseDetail/ExerciseCard";
 import Htext from '../components/shared/Htext';
 const FavoriteExercisesPage= () => {
@@ -8,17 +8,17 @@ const FavoriteExercisesPage= () => {
   return (
     <div style={ {marginTop:'6rem',marginBottom:'4rem', minHeight:'90vh'}}>
     <Htext> Favorite Exercises </Htext>
-      <div className='favorit-Exercise'>
+      <div className='exersice-List'>
               {favoriteExercises ? (
           favoriteExercises.length > 0 ? (
             favoriteExercises.map((exercise) => (
               <ExerciseCard key={exercise.id} name={exercise.name} gifUrl={exercise.gifUrl} bodyPart={exercise.bodyPart} target={exercise.target} id={exercise.id} />
             ))
           ) : (
-            <span>There are no favorite exercises selected.</span>
+            <span >There are no favorite exercises selected.</span>
           )
         ) : (
-          <span>Loading...</span>
+          <span style={{margin:'auto'}}>Loading...</span>
         )}
       </div>
       </div>

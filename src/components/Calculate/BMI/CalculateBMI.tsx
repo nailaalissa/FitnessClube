@@ -36,43 +36,6 @@ export default function CalculateBMI() {
  
   }
 
-
-    // useEffect(() => {
-  
-    //   if (bmiValues) {
-    //     setIsLoading(true); 
-    //     const url = `https://fitness-calculator.p.rapidapi.com/bmi?age=${bmiValues.age}&weight=${bmiValues.weight}&height=${bmiValues.height}`;
-    //     fetch(url, {
-    //       method: 'GET',
-    //       headers: {
-    //         'X-RapidAPI-Key': import.meta.env.VITE_APP_RAPID_API_KEY, 
-    //         'X-RapidAPI-Host': import.meta.env.VITE_APP_RAPID_HOST_FITNESS, 
-    //       },
-    //     })
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         setData(data.data); 
-    //         setIsLoading(false);
-    //         setShowMessage(true);
-    //         console.log('test2');
-    //         setTimeout(() => {
-    //           setShowMessage(false);
-            
-    //           setBmiValues(null); 
-    //           setDisableButton(false); 
-    //         }, 9000); 
-    //       })
-    //       .catch((error) => {
-    //         console.error('Error fetching BMI data:', error);
-    //         setIsLoading(false); 
-    //       });
-    //   }
-    // }, [bmiValues]);
-  
- 
-
- // Consider using useCallback if the fetch logic depends on external factors
- // Consider using useCallback only if fetchBMI depends on external factors
  const memoizedFetchBMI = useCallback(async () => {
   if (bmiValues) {
     const url = `https://fitness-calculator.p.rapidapi.com/bmi?age=${bmiValues.age}&weight=${bmiValues.weight}&height=${bmiValues.height}`;

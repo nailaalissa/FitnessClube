@@ -6,7 +6,7 @@ import { benefits } from './benefit-Data'
 
 
 export default function Benefit() {
-  // console.log('testbenifit');
+ 
   return (
     <section style={ {backgroundColor: 'var(--white)'}}>
     <div className="benifit-section">

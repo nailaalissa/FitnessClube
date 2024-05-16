@@ -15,7 +15,7 @@ export default function ContactUs() {
     sentSend(true);
     setTimeout(() => {
       sentSend(false);
-    }, 6000);
+    }, 99000);
     if (formRef.current) {
       formRef.current.reset();
     }
@@ -64,7 +64,7 @@ export default function ContactUs() {
         </section>
         <div className="image-container ">
         <img src={shapImage} alt="shapeimage" className="shap"/>
-          <img src={imgArrow} alt="arrow"  className="arrow"/>
+        <img src={imgArrow} alt="arrow"  className="arrow"/>
          
        </div>
       </div>

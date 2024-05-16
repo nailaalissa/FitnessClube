@@ -61,6 +61,7 @@
 .click{
    z-index: 99; 
 }
+
 .watermark-text {
   position: relative;
   top: 10%;
@@ -154,7 +155,7 @@
 @media (max-width:490px) {
   .watermark-text {
     font-size: 70px;
-    top:12%;
+    top: 5%;
   }
   .banner{
     font-size: 12px;
@@ -169,7 +170,17 @@
 }
 
 
-
+@media (min-width:820px) and (max-width:1180px){
+  /* .banner-image {
+    width: 50%;} */
+  .hero-banner-img {
+    width: 380px;}
+    .banner-image {
+      width: 100%;}
+      .banner {
+        justify-content: flex-start; 
+        align-items: flex-start; }
+}
 
 
 

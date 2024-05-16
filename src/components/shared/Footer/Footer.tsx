@@ -16,7 +16,7 @@ const Footer = () => (
     
     </ul>
  
-  <p> 2024 Spencer Sharp, All rights <span className="love">❤</span></p>
+  <p>  Designed By Naila 2024 <span className="love"> ❤</span></p>
 </footer>
 );
 

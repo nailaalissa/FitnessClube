@@ -366,38 +366,7 @@ width: 100%;
   gap:1rem;
 }
 
-@media (max-width: 790px) {
-  .input-field {
-    width: 60%;
-    height: 50px;
-  }
-  .search-btn{
-    width: 25px;
-    height: 50px;
-  }
-  
-}
-@media (max-width: 990px) {
-  .input-field {
-    width: 60%;
-    height: 50px;
-  }
-  .search-btn{
-    width: 20%;
-    height: 51px;
-  }
-}
 
-@media (max-width:660px) {
-  .banner-image{
-    display: none;
-  }
- .videoTitle{
-  font-size: 16px;
-
- }
-  
-}
 
 .video{
   border-bottom: 1px solid red;
@@ -417,7 +386,7 @@ width: 98%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.9rem;
  
 }
 .pagination-btn{
@@ -433,12 +402,13 @@ width: 98%;
   padding: 8px;
 }
 
-.pagination .active{
+.pagination .activePage{
   padding: 5px;
-  background: #f5b010;
+  text-decoration: underline;
   border-radius: 25%;
-  color: red;
+  color:red;
   font-size: 1.3rem;
+  font-weight: 600;
   
 }
 .pagination .pageNmuber{
@@ -448,4 +418,60 @@ width: 98%;
 .pagination .pageNmuber:hover{
   font-size: 1.3rem;
 
+}
+
+
+@media (max-width: 790px) {
+  .input-field {
+    width: 70%;
+    height: 50px;
+  }
+  .search-btn{
+    width: 25px;
+    height: 50px;
+  }
+  
+}
+@media (max-width: 990px) {
+  .input-field {
+    width: 70%;
+    height: 50px;
+  }
+  .search-btn{
+    width: 30%;
+    height: 51px;
+  }
+}
+
+@media (max-width:660px) {
+  .banner-image{
+    display: none;
+  }
+ .videoTitle{
+  font-size: 16px;
+
+ }
+ .right-side {
+
+  padding: 0;}
+  .right-side .detail-text {
+    padding: 0;}
+    .instructions h1{
+      padding: 1rem;
+    
+    }
+  .buttons {
+ 
+      gap: 5px;}
+  .group1,.group2{
+        font-size: 14px;
+        padding-left: 8px;
+       padding-right: 8px;
+      }
+  .exercise-card {
+        margin: 1rem 0;
+      }
+  .exercise-card .text {
+    
+        font-size: 16px;}
 }
