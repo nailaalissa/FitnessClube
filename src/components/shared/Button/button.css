@@ -6,7 +6,7 @@
 	font-weight: 500;
 	font-family: inherit;
 	cursor: pointer;
-	transition: border-color 0.25s;
+	transition: var(--baner) 0.25s;
 } 
 
 .base-button:hover {

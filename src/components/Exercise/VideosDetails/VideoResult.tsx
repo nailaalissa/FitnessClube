@@ -22,7 +22,7 @@ export default function VideoResult({ exerciseName }: { exerciseName: string }) 
 
   return (
     <div>
-      {/* Display videos */}
+    
       <div className="container" style={{ display:'flex',flexDirection:'column', gap:'1rem'}}>
       {videos?.map(video => (
         <div key={video.videoId} className="video">

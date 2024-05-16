@@ -7,7 +7,6 @@ import loadingImage from '../../../assets/calculate.gif';
 import weight from '../../../assets/kg.png'
 import bmiresult from '../../../assets/bmiresult.png'
 import sparkel from '../../../assets/AbstractWaves.png'
-// import classification from '../../../assets/class1.png'
 import Htext from '../../shared/Htext';
 
 
@@ -129,7 +128,6 @@ useEffect(() => {
       </div>
       <div className={showMessage ? 'show' : 'notShow' }>
     <Htext> What does this mean for you?</Htext>
-    {/* <img src={classification} style={{ marginLeft: '3rem' }} alt="BMI Classification" /> */}
     <div className='resultInfo'>
       <span className='Info-text' style={{color:'blue'}}>Underweight : </span>  <p>Indicates being below the normal weight range, potentially leading to health risks despite not being obese.</p>
       <span className='Info-text' style={{color:'green'}}>Normal Weight : </span><p> Falls within the healthy weight range, reducing the risk of weight-related health problems.</p>

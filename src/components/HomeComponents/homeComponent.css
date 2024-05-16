@@ -66,7 +66,7 @@
   position: relative;
   top: 10%;
   left: 50%;
- z-index: -1;
+  z-index: -1;
   transform: translate(-50%, -50%);
   font-weight: 600;
   color: var(--baner) ;
@@ -75,7 +75,6 @@
 }
 .banner-content .text-banner{
   margin: 1.5rem;
-  /* padding: 15px; */
   font-size: 1.3rem;
 }
 
@@ -111,8 +110,8 @@
   }
   .banner-image{
     width: 98%;
- margin-left: auto;
- margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .text-banner{
     margin: 0;
@@ -125,7 +124,7 @@
   .hero-banner-img {
     width: 300px;
   object-fit: contain;
-    /* margin-left: 2rem; */
+ 
   }
   .hero-banner-img {
     width: 380px;
@@ -136,10 +135,7 @@
   }
 }
 
-/* @media (min-width: 890px ) {
-  
-  
-} */
+
 @media (max-width: 820px ) {
   br{
     display: none;
@@ -171,15 +167,15 @@
 
 
 @media (min-width:820px) and (max-width:1180px){
-  /* .banner-image {
-    width: 50%;} */
+ 
   .hero-banner-img {
     width: 380px;}
     .banner-image {
       width: 100%;}
-      .banner {
+  .banner {
         justify-content: flex-start; 
-        align-items: flex-start; }
+        align-items: flex-start;
+       }
 }
 
 

@@ -3,7 +3,6 @@
   width: 95%;
   margin-bottom: 4rem;
   margin-left: auto;
-  /* margin-right: auto; */
   gap: 1rem;
    background-image: url('../../assets//girl.png');
    background-size: 250px 300px;
@@ -76,8 +75,6 @@ margin-left: 1rem;
   padding: 5px;
 }
 .girl img{
-
-
   width: 300px;
   height: 300px;
   opacity: 50%;
@@ -88,7 +85,6 @@ margin-left: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-
 }
 
 .loadingImage{
@@ -124,7 +120,6 @@ align-items: center;
 }
 .imgInfo{
   width: 80px;
-
 }
 
 .rotat{
@@ -159,16 +154,21 @@ align-items: center;
   font-size: 18px;
 }
 .containers{
-   align-items: center; }
+   align-items: center; 
+  }
+
+
+
 @media (max-width: 850px) {
   .containers{
-    /* align-items: center; */
     justify-content: center;
   }
 
 }
 @media (max-width: 820px) {
-  .calculate-section-bmr,.calculate-section-calorie {display: block;}
+  .calculate-section-bmr,.calculate-section-calorie{
+    display: block;
+  }
   .calculate-section{
     display: block;
     margin: auto;

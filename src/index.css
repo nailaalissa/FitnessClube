@@ -93,13 +93,13 @@ html,body,#root,.App{
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s; 
 
-  /* Hover styles */
-  &:hover {
-    background-color: var(--primary-500); 
-    color: var(--white);
-  }
+ 
 }
-
+ /* Hover styles */
+ .button:hover {
+  background-color: var(--primary-500); 
+  color: var(--white);
+}
 .flex-between {
   display: flex;
   align-items: center;
@@ -129,6 +129,9 @@ button{
 link:hover{
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+
+
 /* Card Excersice */
 .card{
   flex-wrap: wrap;
@@ -157,7 +160,6 @@ justify-content: flex-end;
   font-size: 1rem ;
   text-transform: capitalize;
   color: var(--primary-500); 
-  /* margin-bottom: 1rem; */
   padding: 20px;
  
 }
@@ -174,7 +176,6 @@ justify-content: flex-end;
   padding: 14px;
   font-size: 22px;
   text-transform: none;
-  /* color: var(--white); */
   border-radius: 4px;
   transition: 0.2s;
  
