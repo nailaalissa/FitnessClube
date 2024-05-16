@@ -15,7 +15,7 @@ export default function ContactUs() {
     sentSend(true);
     setTimeout(() => {
       sentSend(false);
-    }, 99000);
+    }, 9000);
     if (formRef.current) {
       formRef.current.reset();
     }
