@@ -97,7 +97,7 @@ import usePagination from "../components/hooks/Pagination/usePagination";
 export default function ExerciseList() {
   const { data, isLoading, isError, error } = useFetch<Exercise[]>(
     `https://exercisedb.p.rapidapi.com/exercises?limit=80`,
-         '8a693a8e53mshe7579073abe3371p10e94bjsnc1d0e7a6b7fe',
+    '1c44fe7385msh55db4b5cd2cb225p1cf174jsn7031d59e710c',
         'exercisedb.p.rapidapi.com'
   );
 

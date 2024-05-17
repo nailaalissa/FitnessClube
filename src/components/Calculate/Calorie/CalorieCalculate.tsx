@@ -8,6 +8,7 @@ import height from '../../../assets/height.png'
 import weight from '../../../assets/kg.png'
 
  import calori from '../../../assets/calori2.png'
+import { Link } from 'react-router-dom';
 export default function CalorieCalculate() {
   const [bmrValues, setBmrValues] = useState<BmrProps | null>(null);
   const [disableButton, setDisableButton] = useState<boolean>(false);
@@ -78,7 +79,8 @@ export default function CalorieCalculate() {
     }
   }, [bmrValues]);
   return (
-    <div style={{ marginTop: '6rem' ,minHeight:'90vh'}}>
+    <div style={{ marginTop: '7rem', minHeight: '90vh' }}>
+       <Link to={`/service`} className='back' style={{margin:'4rem'}}> <i className="fas fa-backward"> </i>  Back</Link>
     <div className="calculate-section-calorie">
    
       <div className="calculate-side">

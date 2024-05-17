@@ -190,4 +190,15 @@ justify-content: flex-end;
   color: var(--primary-500);
 }
 
+.back{
+  text-decoration: none;
+  color: red;
+}
 
+.back:hover, .back:active{
+  color: red;
+
+}
+.back:hover{
+  text-decoration: underline;
+}

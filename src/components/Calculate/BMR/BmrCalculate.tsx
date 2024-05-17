@@ -7,6 +7,7 @@ import { BmrProps} from '../Calorie/Calorie.types';
 // import { DailyCalorieResponse } from '../Calorie/Calorie.types';
 import '../calculate.css';
 import Htext from '../../shared/Htext';
+import { Link } from 'react-router-dom';
 
 export default function BmrCalculate() {
   const [bmrValues, setBmrValues] = useState<BmrProps | null>(null);
@@ -65,7 +66,8 @@ export default function BmrCalculate() {
 
 
   return (
-    <div style={{ marginTop: '6rem' ,minHeight:'90vh'}}>
+    <div style={{ marginTop: '7rem', minHeight: '90vh' }}>
+       <Link to={`/service`} className='back' style={{margin:'4rem'}}> <i className="fas fa-backward"> </i>  Back</Link>
       <div className="calculate-section-bmr">
         <div className="calculate-side-bmr calculate-side">
           <Form onSubmit={handleSubmit} title='BMR Calculate' input1='height' input2='weight' input3='age' text='Calculate' gender='female' disableButton={disableButton} />

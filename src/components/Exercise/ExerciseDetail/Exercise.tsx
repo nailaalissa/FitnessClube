@@ -1,5 +1,5 @@
 
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { ExerciseDetail } from './exerciseTypes.types';
 import useFetch from "../../hooks/use-fetch";
 import Htext from '../../shared/Htext';
@@ -7,17 +7,28 @@ import BodyPartImage from '../../../assets/body.png';
 import TargetImage from '../../../assets/waist.png';
 import EquipmentImage from '../../../assets/abs.png';
 import VideoResult from '../VideosDetails/VideoResult';
-
+import { useFavoriteExercise } from '../../hooks/FavoriteExercise/useFavoriteExercise';
+import { useCallback } from 'react';
 
 
 export default function Exercise() {
-
+  const { addToFavorites, favoriteExercises, removeFromFavorites } = useFavoriteExercise();
   const { id } = useParams();
+  const isFavorite = id && favoriteExercises.some((exercise) => exercise.id === id); 
+  
   const url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`;
   const { data, isLoading, isError, error } = useFetch<ExerciseDetail>(
-    url, '8a693a8e53mshe7579073abe3371p10e94bjsnc1d0e7a6b7fe', 'exercisedb.p.rapidapi.com'
+    url, '1c44fe7385msh55db4b5cd2cb225p1cf174jsn7031d59e710c', 'exercisedb.p.rapidapi.com'
   );
- 
+  const handleAddToFavorites = useCallback(() => {
+    if (id  && data) {
+      if (isFavorite) {
+        removeFromFavorites(id);
+      } else {
+        addToFavorites({ id, name:data.name, gifUrl: data.gifUrl, bodyPart: data.bodyPart, target: data.target });
+      }
+    }
+  }, [isFavorite, id, data, addToFavorites, removeFromFavorites]);
   const extraDetail = [
     {
       icon: BodyPartImage,
@@ -45,6 +56,14 @@ export default function Exercise() {
 
         <div className='datail'>
          <Htext >Exercise <span className='text-start' style={{ textTransform: 'capitalize' }}>{data.name}</span> </Htext>
+        
+          <Link to={`/exercises`} className='back'> <i className="fas fa-backward"> </i>  Back</Link>
+          <div className="favorit-card">
+            <span className={isFavorite ? 'remove' : 'add'}  onClick={(e) => {
+    e.preventDefault(); 
+    handleAddToFavorites();
+  }}>❤</span>
+          </div>
           <div className='container-detail'>
             
           <div className='left-side'>

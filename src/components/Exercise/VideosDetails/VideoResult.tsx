@@ -6,7 +6,7 @@ export default function VideoResult({ exerciseName }: { exerciseName: string }) 
   const [videos, setVideos] = useState<VideoData[] | null>(null);
   const { data } = useFetch<{ contents?: VideoItem[] }>( 
     `https://youtube-search-and-download.p.rapidapi.com/search?query=${exerciseName}exercise`,
-    '3dad8895d7mshdc18f9f812fc78bp1856b0jsna7e1282f969d',
+    '1c44fe7385msh55db4b5cd2cb225p1cf174jsn7031d59e710c',
     'youtube-search-and-download.p.rapidapi.com'
   );
 
