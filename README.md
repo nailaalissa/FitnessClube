@@ -22,23 +22,20 @@
   <li>RapidAPI: Used for fetching exercise data from the ExerciseDB API.</li>
   <li>Vite: Build tool for frontend projects, providing fast and efficient development.</li>
 </ul>
+<h3>Contributing</h3>
+<p>Contributions are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.</p>
 
 <h3>Setup Instructions</h3>
 
 
 
-
-
 ```bash
-<p>Clone the repository:</p>
+Clone the repository:
 git clone https://github.com/nailaalissa/FitnessClube.git
-<p>Navigate to the project directory:</p>
+Navigate to the project directory:
 cd FitnessClube
-<p>Install dependencies:</p>
+Install dependencies:
 npm install
-<p>Start the development server:</p>
+Start the development server:
 npm run dev
-
-<p>Open your browser to view the application.</p>
-<h3>Contributing</h3>
-<p>Contributions are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.</p>
+Open your browser to view the application
