@@ -4,18 +4,20 @@
 <h2>Features</h2>
 <ul>
 <li>Exercise Catalog: Browse through a wide range of exercises categorized by body part, equipment, and target area.</li>
-<li>Exercise Details: Get detailed information about each exercise, including GIF demonstrations, target muscles, equipment needed, and step-by-step instructions</li>.
+<li>Exercise Details: Get detailed information about each exercise, including GIF demonstrations, target muscles, equipment needed, and step-by-step instructions.</li>
 <li>Favorite Exercises: Mark your favorite exercises and access them quickly for future reference.</li>
 <li>Video Demonstrations: Watch accompanying videos to see exercises in action and learn proper form and technique.</li>
   </ul>
 <h3>Technologies Used</h3>
-React: Frontend framework for building user interfaces.
-React Router: Navigation library for routing within the application.
-TypeScript: Superset of JavaScript providing static typing and other features for large-scale application development.
-CSS Modules: CSS styling approach that allows scoping of CSS by automatically creating a unique class name.
-Font Awesome: Icon library for adding scalable vector icons to the project.
-RapidAPI: Used for fetching exercise data from the ExerciseDB API.
-Vite: Build tool for frontend projects, providing fast and efficient development.
+<ul>
+<li>React: Frontend framework for building user interfaces.</li>
+<li>React Router: Navigation library for routing within the application.</li>
+<li>TypeScript: Superset of JavaScript providing static typing and other features for large-scale application development.</li>
+<li>CSS Modules: CSS styling approach that allows scoping of CSS by automatically creating a unique class name.</li>
+<li>Font Awesome: Icon library for adding scalable vector icons to the project.</li>
+<li>RapidAPI: Used for fetching exercise data from the ExerciseDB API.</li>
+<li>Vite: Build tool for frontend projects, providing fast and efficient development.</li>
+  </ul>
 Setup Instructions
 Clone the repository:
 git clone https://github.com/nailaalissa/FitnessClube.git
