@@ -25,17 +25,18 @@
 
 <h3>Setup Instructions</h3>
 
-<p>Clone the repository:</p>
-<p>Navigate to the project directory:</p>
-<p>Install dependencies:</p>
-<p>Start the development server:</p>
+
+
+
+
 ```bash
+<p>Clone the repository:</p>
 git clone https://github.com/nailaalissa/FitnessClube.git
-
+<p>Navigate to the project directory:</p>
 cd FitnessClube
-
+<p>Install dependencies:</p>
 npm install
-
+<p>Start the development server:</p>
 npm run dev
 
 <p>Open your browser to view the application.</p>
