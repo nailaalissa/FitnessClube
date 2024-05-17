@@ -2,11 +2,13 @@
 <p>Welcome to Fitness Club! This is a web application designed to help users discover and learn various exercises to improve their fitness levels. Whether you're a beginner looking to start a fitness journey or an experienced fitness enthusiast searching for new workouts, Fitness Club has something for everyone.</p>
 
 <h2>Features</h2>
-Exercise Catalog: Browse through a wide range of exercises categorized by body part, equipment, and target area.
-Exercise Details: Get detailed information about each exercise, including GIF demonstrations, target muscles, equipment needed, and step-by-step instructions.
-Favorite Exercises: Mark your favorite exercises and access them quickly for future reference.
-Video Demonstrations: Watch accompanying videos to see exercises in action and learn proper form and technique.
-Technologies Used
+<ul>
+<li>Exercise Catalog: Browse through a wide range of exercises categorized by body part, equipment, and target area.</li>
+<li>Exercise Details: Get detailed information about each exercise, including GIF demonstrations, target muscles, equipment needed, and step-by-step instructions</li>.
+<li>Favorite Exercises: Mark your favorite exercises and access them quickly for future reference.</li>
+<li>Video Demonstrations: Watch accompanying videos to see exercises in action and learn proper form and technique.</li>
+  </ul>
+<h3>Technologies Used</h3>
 React: Frontend framework for building user interfaces.
 React Router: Navigation library for routing within the application.
 TypeScript: Superset of JavaScript providing static typing and other features for large-scale application development.
