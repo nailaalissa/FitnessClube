@@ -7,34 +7,17 @@ export interface BmrProps{
 }
 
 
-
 export interface DailyCalorieResponse {
   BMR: number;
+  dailyCalorieRequirement: number;
   goals: {
-    "maintain weight": number;
-    "Mild weight loss": {
-      "loss weight": string;
-      calory: number;
-    };
-    "Weight loss": {
-      "loss weight": string;
-      calory: number;
-    };
-    "Extreme weight loss": {
-      "loss weight": string;
-      calory: number;
-    };
-    "Mild weight gain": {
-      "gain weight": string;
-      calory: number;
-    };
-    "Weight gain": {
-      "gain weight": string;
-      calory: number;
-    };
-    "Extreme weight gain": {
-      "gain weight": string;
-      calory: number;
-    };
+    maintainWeight: number;
+    mildWeightLoss: number;
+    weightLoss: number;
+    extremeWeightLoss: number;
+    mildWeightGain: number;
+    weightGain: number;
+    extremeWeightGain: number;
   };
 }
+

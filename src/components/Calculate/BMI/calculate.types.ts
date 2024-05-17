@@ -20,3 +20,7 @@ export interface Bmr extends BmiProps {
   gender: string;
 }
 
+export interface BmiCalculate{
+  BMICalculate: number;
+  bmi_range: string;
+}

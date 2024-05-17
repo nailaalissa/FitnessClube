@@ -21,9 +21,9 @@ export default function VideoResult({ exerciseName }: { exerciseName: string }) 
   }, [data]);
 
   return (
-    <div>
+    <div style={{margin:'2rem'}}>
     
-      <div className="container" style={{ display:'flex',flexDirection:'column', gap:'1rem'}}>
+      <div className="videoContainer">
       {videos?.map(video => (
         <div key={video.videoId} className="video">
           <h3 className="videoTitle">{video.title}</h3>

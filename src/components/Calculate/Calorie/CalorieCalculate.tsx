@@ -8,13 +8,13 @@ import height from '../../../assets/height.png'
 import weight from '../../../assets/kg.png'
 
  import calori from '../../../assets/calori2.png'
-// import useFetch from '../../hooks/use-fetch';
 export default function CalorieCalculate() {
   const [bmrValues, setBmrValues] = useState<BmrProps | null>(null);
   const [disableButton, setDisableButton] = useState<boolean>(false);
    const [bmrdata, setBmrData] = useState<DailyCalorieResponse | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-   const [showMessage, setShowMessage] = useState<boolean>(false);
+  const [showMessage, setShowMessage] = useState<boolean>(false);
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setDisableButton(true);
@@ -37,44 +37,46 @@ export default function CalorieCalculate() {
     setIsLoading(true);
   }
 
+
+
+  function calculateCalorieRequirements({ height, weight, age, gender }: BmrProps): DailyCalorieResponse {
+    let bmr: number;
+    if (gender === 'male') {
+      bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+   
+    } else {
+      bmr =  10 * weight + 6.25 * height - 5 * age + 5;
+    }
+
+    const dailyCalorieRequirement = bmr * 1.2;
+
+    return {
+      BMR: bmr,
+      dailyCalorieRequirement: dailyCalorieRequirement,
+      goals: {
+        maintainWeight: dailyCalorieRequirement,
+        mildWeightLoss: dailyCalorieRequirement - 250,
+        weightLoss: dailyCalorieRequirement - 500,
+        extremeWeightLoss: dailyCalorieRequirement - 1000,
+        mildWeightGain: dailyCalorieRequirement + 250,
+        weightGain: dailyCalorieRequirement + 500,
+        extremeWeightGain: dailyCalorieRequirement + 1000,
+      },
+    };
+  }
   useEffect(() => {
     if (bmrValues) {
-      const url = `https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${bmrValues.age}&gender=${bmrValues.gender}&height=${bmrValues.height}&weight=${bmrValues.weight}&activitylevel=${bmrValues.activitylevel}`;
-      fetch(url, {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key':'3dad8895d7mshdc18f9f812fc78bp1856b0jsna7e1282f969d',
-          'X-RapidAPI-Host':'fitness-calculator.p.rapidapi.com',
-        },
-      })
-        .then((response) => {
-     
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-        
-          return response.json();
-        })
-        .then((data) => {
-          setBmrData(data.data);
-          setIsLoading(false);
-          setShowMessage(true);
-          setTimeout(() => {
-          setShowMessage(false);
-          setBmrValues(null); 
-          setDisableButton(false); 
-          }, 9000); 
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-        
-        });
+      const data = calculateCalorieRequirements(bmrValues);
+      setBmrData(data);
+      setIsLoading(false);
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+        setBmrValues(null);
+        setDisableButton(false);
+      }, 9000);
     }
   }, [bmrValues]);
-  
-
-
-
   return (
     <div style={{ marginTop: '6rem' ,minHeight:'90vh'}}>
     <div className="calculate-section-calorie">
@@ -111,34 +113,25 @@ export default function CalorieCalculate() {
                 <div className='goals-container'>
                   <h4>Goals:</h4>
                   <ul>
-                    <li>Maintain Weight: <span>{bmrdata.goals['maintain weight']}</span>  Calories</li>
-                    <li>Mild Weight Loss:<span> {bmrdata.goals['Mild weight loss'].calory.toFixed(2)} </span> Calories</li>
-                    <li>Weight Loss:<span> {bmrdata.goals['Weight loss'].calory.toFixed(2)} </span> Calories</li>
-                    <li>Extreme Weight Loss: <span> {bmrdata.goals['Extreme weight loss'].calory.toFixed(2)}</span>  Calories</li>
-                    <li>Mild Weight Gain:<span>{bmrdata.goals['Mild weight gain'].calory.toFixed(2)} </span> Calories</li>
-                    <li>Weight Gain:<span> {bmrdata.goals['Weight gain'].calory.toFixed(2)} </span> Calories</li>
-                    <li>Extreme Weight Gain:<span> {bmrdata.goals['Extreme weight gain'].calory.toFixed(2)}</span>  Calories</li>
-                  </ul>
+                      <li>Maintain Weight: <span>{bmrdata.goals.maintainWeight.toFixed(2)}</span> Calories</li>
+                      <li>Mild Weight Loss: <span>{bmrdata.goals.mildWeightLoss.toFixed(2)}</span> Calories</li>
+                      <li>Weight Loss: <span>{bmrdata.goals.weightLoss.toFixed(2)}</span> Calories</li>
+                      <li>Extreme Weight Loss: <span>{bmrdata.goals.extremeWeightLoss.toFixed(2)}</span> Calories</li>
+                      <li>Mild Weight Gain: <span>{bmrdata.goals.mildWeightGain.toFixed(2)}</span> Calories</li>
+                      <li>Weight Gain: <span>{bmrdata.goals.weightGain.toFixed(2)}</span> Calories</li>
+                      <li>Extreme Weight Gain: <span>{bmrdata.goals.extremeWeightGain.toFixed(2)}</span> Calories</li>
+                    </ul>
                 </div>
   </>
 )}
-
-       
+     
           </div>
        
         </div>
-     
-     
-       
 
-
-      </div>
-    
-
+      </div>    
     </div>
    
-  
-  
 </div>
   
 

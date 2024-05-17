@@ -361,7 +361,15 @@ margin-top: 2rem;
   gap:1rem;
 }
 
-
+.videoContainer{
+  display:flex;
+flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--gray-500);
+	border-radius: 15px;
+	box-shadow: 0 0 10px var(--primary-500);
+}
 
 .video{
   border-bottom: 1px solid red;
@@ -469,4 +477,11 @@ margin-top: 2rem;
   .exercise-card .text {
     
         font-size: 16px;}
-}
+  .videoContainer{
+          border: none;
+          /* box-shadow: none; */
+        }
+.videoTitle{
+          font-size: 14px;
+        }
+      }

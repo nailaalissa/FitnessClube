@@ -3,17 +3,18 @@ import Form from '../../shared/form';
 import loadingImage from '../../../assets/calculate.gif';
 // import sparkel from '../../../assets/Sparkles.png'
 
-import { BmrProps, DailyCalorieResponse } from '../Calorie/Calorie.types';
+import { BmrProps} from '../Calorie/Calorie.types';
+// import { DailyCalorieResponse } from '../Calorie/Calorie.types';
 import '../calculate.css';
 import Htext from '../../shared/Htext';
 
 export default function BmrCalculate() {
   const [bmrValues, setBmrValues] = useState<BmrProps | null>(null);
   const [disableButton, setDisableButton] = useState<boolean>(false);
-  const [bmrdata, setBmrData] = useState<DailyCalorieResponse | null>(null);
+  // const [bmrdata, setBmrData] = useState<DailyCalorieResponse | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showMessage, setShowMessage] = useState<boolean>(false);
-
+  const [calculateBMR, setCalculateBMR] = useState<number>();
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setDisableButton(true);
@@ -34,42 +35,31 @@ export default function BmrCalculate() {
     setIsLoading(true);
     console.log('test1')
   }
+  const calculatebmr = (weight:number, height:number, age:number, gender:string) => {
+    if (gender == "male") {
+      const bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+      setCalculateBMR(bmr);
+    }
+  
+    const bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    setCalculateBMR(bmr);
+  };
+
+ 
+
   useEffect(() => {
     if (bmrValues) {
-      const url = `https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${bmrValues.age}&gender=${bmrValues.gender}&height=${bmrValues.height}&weight=${bmrValues.weight}&activitylevel=level_1`;
-      setIsLoading(true);
-
-      fetch(url, {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '3dad8895d7mshdc18f9f812fc78bp1856b0jsna7e1282f969d',
-          'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com',
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setBmrData(data.data);
-          setIsLoading(false);
-          setShowMessage(true);
-          setTimeout(() => {
-            setShowMessage(false);
-            setBmrValues(null); 
-            setDisableButton(false); 
-            }, 9000); 
-          })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-          setIsLoading(false);
-        });
-        console.log('test2')
+      calculatebmr(bmrValues.weight, bmrValues.height, bmrValues.age, bmrValues.gender);
+      setIsLoading(false);
+              setShowMessage(true);
+              setTimeout(() => {
+                setShowMessage(false);
+                setBmrValues(null); 
+                setDisableButton(false); 
+                }, 9000); 
+             
     }
   }, [bmrValues]);
-
 
 
 
@@ -87,15 +77,14 @@ export default function BmrCalculate() {
             <h1>Exploring the Basal Metabolic Rate (BMR) </h1>
             <p style={{fontWeight:'500'}}>To find out how much energy body needs to survive at a basic level.</p>
             {isLoading && <img src={loadingImage} alt="Loading" className='loadingImage' />}
-            {bmrdata && showMessage && (
-              <>
+         
+            {  showMessage && (<>
                 <div className='result-container-bmr border'>
-                <Htext className='result-text-bmr'>BMR: {bmrdata.BMR} Calories</Htext>
+                <Htext className='result-text-bmr'>BMR: {calculateBMR} Calories</Htext>
       
                 </div>
               
-              </>
-            )}
+              </>)}
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function Service() {
         <p className="service-text" >Planning and living a healthy lifestyle require honest calculations. Input your current and desired body parameters to understand numbers such as body mass index (BMI), ideal weight, calorie intake, and other health indicators. They will help you make informed nutrition, fitness, and overall well-being decisions.</p>
         </section>
         </div>
-      <div className="container">
+      <div className="container" style={{width:'95%'}}>
         {CalcolatorsChoices.map((claculater: BenefitType, index) => (
         
             <BenefitCard

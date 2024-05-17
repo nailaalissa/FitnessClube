@@ -80,7 +80,7 @@ function Form({
       )}
 
       {activity && (
-        <div className='inputSection'>
+        <div className='inputSection_activity'>
         <Label text="activity Level" >
           <select name="activity" className='selcet' value={selectedActivityLevel} onChange={handleActivityChange}>
             <option value="level_1">Level 1</option>

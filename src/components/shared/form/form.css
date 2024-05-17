@@ -67,6 +67,17 @@
   justify-content: center;
 }
 
+.inputSection_activity{
+  width: 100%;
+  margin-left: auto;
+  margin-bottom: auto;
+ 
+  /* justify-content: center; */
+}
+.inputSection_activity span{
+  width: 50%;
+  text-align: center;
+}
 .notActive{
   background-color: var(--gray-20);
 }
@@ -84,4 +95,13 @@
 }
 .selcet option{
   text-align: center;
+}
+
+@media (max-width:600px) {
+  .inputSection_activity span{
+    width: 65%;}
+  
+}
+@media (min-width:1024px) {
+.calculate-side {width: 65%;}
 }
