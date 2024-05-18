@@ -60,9 +60,9 @@ export default function Exercise() {
           <Link to={`/exercises`} className='back'> <i className="fas fa-backward"> </i>  Back</Link>
           <div className="favorit-card">
             <span className={isFavorite ? 'remove' : 'add'}  onClick={(e) => {
-    e.preventDefault(); 
-    handleAddToFavorites();
-  }}>❤</span>
+            e.preventDefault(); 
+            handleAddToFavorites();
+          }}>❤</span>
           </div>
           <div className='container-detail'>
             
@@ -91,12 +91,9 @@ export default function Exercise() {
           </div>
           
           </div>
-           
-           
-          
+        
           </div>  
-              
-          
+       
           <div className='instructions'>
           <p>Follow the instructions below to perform this exercise effectively:</p> <br />
             <h1> Instructions</h1>

@@ -21,7 +21,7 @@ export default function CalorieCalculate() {
     setDisableButton(true);
     const formData = new FormData(event.target as HTMLFormElement);
     const height = formData.get('height') as string;
-    console.log(height)
+   // console.log(height)
     const weight = formData.get('weight') as string;
     const age = formData.get('age') as string;
     const gender = formData.get('gender') as string;

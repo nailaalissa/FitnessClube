@@ -2,8 +2,8 @@
 
 export interface VideoResponse {
   contents: VideoData[];
-estimatedResults: string;
-next: string;
+  estimatedResults: string;
+  next: string;
  
 }
 export interface VideoData {
@@ -20,8 +20,8 @@ export interface VideoData {
 }
 
 export interface VideoThumbnail {
-  height?: number;
   url: string;
+  height?: number;
   width?: number;
 }
 

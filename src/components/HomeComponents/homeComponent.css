@@ -168,8 +168,8 @@
 
 @media (min-width:820px) and (max-width:1180px){
  
-  .hero-banner-img {
-    width: 380px;}
+  /* .hero-banner-img {
+    width: 380px;} */
     .banner-image {
       width: 100%;}
   .banner {
