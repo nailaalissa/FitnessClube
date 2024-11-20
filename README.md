@@ -1,6 +1,6 @@
-<h1>Fitness Club</h1>
+#Fitness Club
 
-<p>Welcome to Fitness Club! This is a web application designed to help users discover and learn various exercises to improve their fitness levels. Whether you're a beginner looking to start a fitness journey or an experienced fitness enthusiast searching for new workouts, Fitness Club has something for everyone.</p>
+Welcome to Fitness Club! This is a web application designed to help users discover and learn various exercises to improve their fitness levels. Whether you're a beginner looking to start a fitness journey or an experienced fitness enthusiast searching for new workouts, Fitness Club has something for everyone.
 
 <h2>Features</h2>
 
